@@ -3,11 +3,11 @@ var app = express();
 var path = require('path');
 
 app.get('/', function(req, res, next) {
-	res.sendFile(path.join(__dirname, 'views','index.html'));
+	res.sendFile(path.join(__dirname, 'views/html','index.html'));
 });
 
 app.get('/test', function(req, res, next) {
-	res.sendFile(path.join(__dirname, 'views','test.html'));
+	res.sendFile(path.join(__dirname, 'views/html','test.html'));
 });
 
 app.listen(8080, function () {
