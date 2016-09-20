@@ -5,11 +5,11 @@ var path = require('path');
 app.use(express.static(path.join(__dirname, 'public/resources')));
 
 app.get('/', function(req, res, next) {
-	res.sendFile(path.join(__dirname, 'views/html','index.html'));
+	res.sendFile(path.join(__dirname, 'views','index.html'));
 });
 
 app.get('/test', function(req, res, next) {
-	res.sendFile(path.join(__dirname, 'views/html','test.html'));
+	res.sendFile(path.join(__dirname, 'views','test.html'));
 });
 
 app.listen(8080, function () {
