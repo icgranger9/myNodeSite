@@ -53,7 +53,7 @@ body {
 	padding-right: 5%;
 	padding-left: 5%;
 }
-.desc:hover  .desc:active{
+.desc:hover{
 	opacity: 1;
 }
 
