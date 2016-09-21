@@ -2,6 +2,10 @@ body {
 	padding-top: 50px;
 	background-color:LightGray;  
 }
+/* clears a bootstrap default*/
+.row{
+	margin: 0px;
+}
 
 .jumbotron{
 	background-color:white;
@@ -15,6 +19,7 @@ body {
 	margin-bottom: 30px;
 }
 
+/* is this needed? check later */
 #projects{ 
 	background-color:white;
 	padding-top: 20px;
@@ -29,7 +34,6 @@ body {
 
 #down{
 	background-image: url('http://iang.gg/pictures/down4sound.jpg');
-	
 }
 
 /* NOT MY CODE, Try to replace */
