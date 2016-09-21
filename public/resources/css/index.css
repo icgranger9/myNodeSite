@@ -55,7 +55,12 @@ body {
 	padding-right: 5%;
 	padding-left: 5%;
 }
+
 .desc:hover{
+	opacity: 1;
+}
+
+.desc:focus{
 	opacity: 1;
 }
 
