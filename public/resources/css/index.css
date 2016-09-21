@@ -28,6 +28,7 @@ body {
 
 .aProject{
 	height: 300px;
+	border-radius: 15px;
 	background-position:center;
 	background-size: cover;
 	border: 1px solid black;
