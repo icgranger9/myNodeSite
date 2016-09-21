@@ -30,6 +30,10 @@ body {
 	height: 300px;
 	background-position:center;
 	background-size: cover;
+	padding-right: 0px;
+	padding-left: 0px;
+	margin-right: 15px;
+	margin-left: 15px;
 }
 
 .desc{
@@ -41,7 +45,7 @@ body {
 	transition-duration:0.5s;
 }
 
-.desc :hover{
+.desc:hover {
 	opacity: 1;
 }
 
