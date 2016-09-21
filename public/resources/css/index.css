@@ -15,13 +15,21 @@ body {
 	margin-bottom: 30px;
 }
 
-.projects{ 
+#projects{ 
 	background-color:white;
 	padding-top: 20px;
 	padding-bottom: 20px; 
 }
+
+.aProject{
+	height: 300px;
+	background-position:center;
+	background-size: cover;
+}
+
 #down{
 	background-image: url('http://iang.gg/pictures/down4sound.jpg');
+	
 }
 
 /* NOT MY CODE, Try to replace */
