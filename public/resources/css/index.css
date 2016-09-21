@@ -20,10 +20,8 @@ body {
 	padding-top: 20px;
 	padding-bottom: 20px; 
 }
-
-#down_pic
-{
-	max-height: 50%;
+#down{
+	background-image: url('pictures/down4sound.jpg');
 }
 
 /* NOT MY CODE, Try to replace */
