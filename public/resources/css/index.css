@@ -60,10 +60,6 @@ body {
 	opacity: 1;
 }
 
-.desc:active{
-	opacity: 1;
-}
-
 #down{
 	background-image: url('http://iang.gg/pictures/down4sound.jpg');
 }
