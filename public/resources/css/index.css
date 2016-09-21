@@ -96,6 +96,17 @@ body {
 #uct_logo{
 	background-image: url('http://iang.gg/pictures/uct_logo.jpg');
 }
+
+.icon{
+	width: 100%;
+	height: 300px;
+	border-radius: 15px;
+	background-repeat: no-repeat;
+	background-position:center;
+	background-size: cover;
+	padding-right: 0px;
+	padding-left: 0px;
+}
 /* NOT MY CODE, Try to replace */
 .navbar-inverse {
 	background-color: #333;
