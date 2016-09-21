@@ -39,6 +39,7 @@ body {
 .desc{
 	height: 100%; 
 	width:100% ;
+	padding-top: 15px;
 	color: white;
 	text-align: center;
 	opacity: 0;
