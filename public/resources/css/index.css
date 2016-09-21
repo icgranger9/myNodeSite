@@ -60,6 +60,16 @@ body {
 	opacity: 1;
 }
 
+.aJob{
+	height: 300px;
+	border-radius: 15px;
+	background-position:center;
+	background-size: cover;
+	border: 1px solid black;
+	padding-right: 0px;
+	padding-left: 0px;
+}
+
 #down{
 	background-image: url('http://iang.gg/pictures/down4sound.jpg');
 }
