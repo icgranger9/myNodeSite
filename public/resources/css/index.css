@@ -73,6 +73,17 @@ body {
 }
 
 
+#cubus_logo{
+	background-image: url('http://iang.gg/pictures/cubus_logo.png');
+}
+
+#css_logo{
+	background-image: url('http://iang.gg/pictures/css_logo.png');
+}
+
+#uct_logo{
+	background-image: url('http://iang.gg/pictures/uct_logo.jpg');
+}
 /* NOT MY CODE, Try to replace */
 .navbar-inverse {
 	background-color: #333;
