@@ -45,6 +45,7 @@ body {
 	color: white;
 	text-align: center;
 	opacity: 0;
+	border-radius: 15px;
 	background-color: rgba(0,0,0,0.5);
 	transition-property: opacity;
 	transition-duration:0.5s;
