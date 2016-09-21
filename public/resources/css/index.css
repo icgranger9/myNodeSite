@@ -32,6 +32,19 @@ body {
 	background-size: cover;
 }
 
+.desc{
+	color: white;
+	text-align: center;
+	opacity: 0;
+	background-color: rgba(0,0,0,0.5);
+	transition-property: opacity;
+	transition-duration:0.5s;
+}
+
+.desc :hover{
+	opacity: 1;
+}
+
 #down{
 	background-image: url('http://iang.gg/pictures/down4sound.jpg');
 }
