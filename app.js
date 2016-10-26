@@ -12,6 +12,10 @@ app.get('/test', function(req, res, next) {
 	res.sendFile(path.join(__dirname, 'views','test.html'));
 });
 
+app.get('/resume', function(req, res, next) {
+	res.sendFile(path.join(__dirname, 'public/resources','Granger_Resume.pdf'));
+});
+
 app.listen(8080, function () {
 	console.log('server listening on 8080');
 });
