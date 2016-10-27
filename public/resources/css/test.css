@@ -1,0 +1,9 @@
+body { 
+	background-color:#0f0f0f;  
+}
+
+.frame{
+	border-color: #40382e;
+	border: 1%;
+}
+/* clears a bootstrap default*/
