@@ -3,7 +3,16 @@ body {
 }
 
 .frame{
-	border-color: red; /*#40382e*/
+	border-color: #40382e; /*#40382e*/
+	border-width: 2px;
 	border: 1%;
+}
+
+.h1{
+	color: #f3e5b1;
+}
+
+.h3{
+	color: #f3e5b1;
 }
 /* clears a bootstrap default*/
