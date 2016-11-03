@@ -5,7 +5,7 @@ body {
 .frame{
 	border-color: #40382e; /*#40382e*/
 	border-width: 2px;
-	border: 1%;
+	border-style: soild;
 }
 
 h1{
