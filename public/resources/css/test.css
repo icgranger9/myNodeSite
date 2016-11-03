@@ -3,7 +3,7 @@ body {
 }
 
 .frame{
-	border-color: #40382e;
+	border-color: red; /*#40382e*/
 	border: 1%;
 }
 /* clears a bootstrap default*/
