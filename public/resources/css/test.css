@@ -1,18 +1,23 @@
 body { 
-	background-color:#0f0f0f;  
+	background-color:#000;
+	color: #f3e5b1; 
+}
+.frame{
+	width: 100%;
+	padding: 150px 20px 20px 20px;
 }
 
-.frame{
+.content{
+	width: 100%;
 	border-color: #40382e; /*#40382e*/
-	border-width: 2px;
+	border-width: 1px;
 	border-style: solid;
 }
 
-h1{
-	color: #f3e5b1;
-}
+.name{
+	text-align: center;
+	position: relative;
+	top: -55px;
 
-h3{
-	color: #f3e5b1;
 }
 /* clears a bootstrap default*/
