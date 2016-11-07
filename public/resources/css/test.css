@@ -4,12 +4,14 @@ body {
 }
 .frame{
 	width: 100%;
-	padding: 150px 20px 20px 20px;
+	height: 100vh;
+	padding: 15% 3% 3% 3%;
 	margin: 0px;
 }
 
 .content{
-	width: 100%;
+	width: inherit;
+	height: 100%;
 	border-color: #40382e; /*#40382e*/
 	border-width: 1px;
 	border-style: solid;
