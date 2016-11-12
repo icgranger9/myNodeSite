@@ -51,7 +51,7 @@
 		 * is loaded.
 		 */
 		function loadGmailApi() {
-			gapi.client.load('gmail', 'v1', listLabels);
+			gapi.client.load('gmail', 'v1', displayInbox);
 		}
 
 		/**
@@ -73,7 +73,7 @@
 				if (messages && messages.length > 0) {
 					for (i = 0; i < messages.length; i++) {
 						var message = messages[i];
-						appendPre(messages.name)
+						appendPre(getHeader(message.payload.headers, 'Subject'))
 					}
 				} else {
 					appendPre('No Labels found.');
