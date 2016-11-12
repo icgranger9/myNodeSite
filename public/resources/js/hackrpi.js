@@ -72,7 +72,7 @@
 
 				if (messages && messages.length > 0) {
 					for (i = 0; i < messages.length; i++) {
-						var messages = messages[i];
+						var message = messages[i];
 						appendPre(messages.name)
 					}
 				} else {
