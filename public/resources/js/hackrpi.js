@@ -54,15 +54,29 @@
 			gapi.client.load('gmail', 'v1', displayInbox);
 		}
 
+
+		/** 
+		* getHeader function()
+		**/
+		function getHeader(headers, index) {
+			var header = '';
+			$.each(headers, function(){
+				if(this.name === index){
+					header = this.value;
+				}
+			});
+			return header;
+		}
+
 		/**
 		* Print all Labels in the authorized user's inbox. If no labels
 		* are found an appropriate message is printed.
 		*/
 		function displayInbox() {
 		  var request = gapi.client.gmail.users.messages.list({
-		    'userId': 'me',
-		    'labelIds': 'INBOX',
-		    'maxResults': 1000
+			'userId': 'me',
+			'labelIds': 'INBOX',
+			'maxResults': 1000
 		  });
 
 
@@ -73,27 +87,15 @@
 				if (messages && messages.length > 0) {
 					for (i = 0; i < messages.length; i++) {
 						var message = messages[i];
-						appendPre(getHeader(message.payload.headers, 'Subject'))
+						appendPre( getHeader(message.payload.headers, 'Subject'))
 					}
-				} else {
+				} else { 
 					appendPre('No Labels found.');
 				}
 			});
 		}
 
 
-		/** 
-		* getHeader function()
-		**/
-		function getHeader(headers, index) {
-        var header = '';
-        $.each(headers, function(){
-          if(this.name === index){
-            header = this.value;
-          }
-        });
-        return header;
-      }
 
 		/**
 		 * Append a pre element to the body containing the given message
