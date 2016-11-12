@@ -81,6 +81,20 @@
 			});
 		}
 
+
+		/** 
+		* getHeader function()
+		**/
+		function getHeader(headers, index) {
+        var header = '';
+        $.each(headers, function(){
+          if(this.name === index){
+            header = this.value;
+          }
+        });
+        return header;
+      }
+
 		/**
 		 * Append a pre element to the body containing the given message
 		 * as its text node.
