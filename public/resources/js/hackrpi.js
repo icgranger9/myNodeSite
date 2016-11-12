@@ -51,26 +51,29 @@
 		 * is loaded.
 		 */
 		function loadGmailApi() {
-		gapi.client.load('gmail', 'v1', listLabels);
+			gapi.client.load('gmail', 'v1', listLabels);
 		}
 
 		/**
 		* Print all Labels in the authorized user's inbox. If no labels
 		* are found an appropriate message is printed.
 		*/
-		function listLabels() {
-			var request = gapi.client.gmail.users.labels.list({
-				'userId': 'me'
-			});
+		function displayInbox() {
+		  var request = gapi.client.gmail.users.messages.list({
+		    'userId': 'me',
+		    'labelIds': 'INBOX',
+		    'maxResults': 1000
+		  });
+
 
 			request.execute(function(resp) {
-				var labels = resp.labels;
-				appendPre('Labels:');
+				var messages = resp.messages;
+				appendPre('Messages:');
 
-				if (labels && labels.length > 0) {
-					for (i = 0; i < labels.length; i++) {
-						var label = labels[i];
-						appendPre(label.name)
+				if (messages && messages.length > 0) {
+					for (i = 0; i < messages.length; i++) {
+						var messages = messages[i];
+						appendPre(messages.name)
 					}
 				} else {
 					appendPre('No Labels found.');
@@ -86,6 +89,6 @@
 		 */
 		function appendPre(message) {
 			var pre = document.getElementById('output');
-			var textContent = document.createTextNode(message + '\n');
+			var textContent = developerscument.createTextNode(message + '\n');
 			pre.appendChild(textContent);
 		}
