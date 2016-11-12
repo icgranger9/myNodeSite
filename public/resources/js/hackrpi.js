@@ -53,20 +53,7 @@
 		function loadGmailApi() {
 			gapi.client.load('gmail', 'v1', displayInbox);
 		}
-
-
-		/** 
-		* getHeader function()
-		**/
-		function getHeader(headers, index) {
-			var header = '';
-			$.each(headers, function(){
-				if(this.name === index){
-					header = this.value;
-				}
-			});
-			return header;
-		}
+		
 
 		/**
 		* Print all Labels in the authorized user's inbox. If no labels
@@ -87,7 +74,7 @@
 				if (messages && messages.length > 0) {
 					for (i = 0; i < messages.length; i++) {
 						var message = messages[i];
-						appendPre( getHeader(message.payload.headers, 'Subject'))
+						appendPre( message.payload.headers )
 					}
 				} else { 
 					appendPre('No Labels found.');
