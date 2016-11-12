@@ -5,7 +5,7 @@ body {
 .frame{
 	width: 100%;
 	height: 100vh;
-	padding: 9% 3% 3% 3%; /*  Refine padding on top (currently 9%) */
+	padding: 10vh 2.5vh 2.5vh 2.5vh; /*  Refine padding on top (currently 9%) */
 	margin: 0px;
 }
 
