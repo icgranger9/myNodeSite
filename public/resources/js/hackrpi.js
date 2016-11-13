@@ -82,8 +82,6 @@ function loadGmailApi() {
 function listMessages(userId, query, callback) {
 	console.log("In List messages");
   	var getPageOfMessages = function(request, result) {
-  		console.log(result);
-  		console.log(result[0]);
 		request.execute(function(resp) {
 			result = result.concat(resp.messages);
 			var nextPageToken = resp.nextPageToken;
@@ -96,6 +94,8 @@ function listMessages(userId, query, callback) {
 				});
 				getPageOfMessages(request, result);
 			} else {
+				console.log(result);
+  				console.log(result[0]);
 				callback(result);
 			}
 		});
