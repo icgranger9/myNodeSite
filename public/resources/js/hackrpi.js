@@ -57,6 +57,7 @@ function loadGmailApi() {
 		listThreads("me", function(resp) {
 			for(var i = 0; i<5; i++){
 				console.log("for loop iteration " + i);
+				console.log(resp["threads"][i]["id"]);
 				getThreads("me", resp["threads"][i]["id"], function(response){
 					console.log(response);
 					console.log("response");
@@ -64,10 +65,10 @@ function loadGmailApi() {
 				console.log("Middle of for loop");
 				getThreads("me", "THREAD_ID", function (dataMessage) {
 					var temp = dataMessage.messages[0].payload.headers;
+					console.log("dataItem.value");
 					$.each(temp, function (j, dataItem) {
 						if (dataItem.name == "From") {
 							console.log(dataItem.value);
-							console.log("dataItem.value");
 						}
 					});
 				console.log("End of for loop");
