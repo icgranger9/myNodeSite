@@ -67,7 +67,7 @@ function loadGmailApi() {
 				});
 
 				request.execute(function(request){
-					console.log(request);
+					console.log(request.result.snippet);
 
 				});
 			}
