@@ -59,19 +59,19 @@ function loadGmailApi() {
 				console.log("for loop iteration " + i);
 				getThreads("me", resp["threads"][i]["id"], function(response){
 					console.log(response);
+					console.log("response");
 				});
 				console.log("Middle of for loop");
-				/*
 				getThreads("me", "THREAD_ID", function (dataMessage) {
 					var temp = dataMessage.messages[0].payload.headers;
 					$.each(temp, function (j, dataItem) {
 						if (dataItem.name == "From") {
 							console.log(dataItem.value);
+							console.log("dataItem.value");
 						}
 					});
 				console.log("End of for loop");
 				});
-				*/
 			}
 		});
 	});
