@@ -70,7 +70,7 @@ function loadGmailApi() {
 					console.log(request.result.snippet);
 					if(request.payload.body.size >0) {
 
-						console.log(getTextFromHtml(final));
+						console.log(getTextFromHtml(request.payload.body.data));
 					}
 
 				});
