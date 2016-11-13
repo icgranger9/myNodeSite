@@ -59,8 +59,11 @@ function loadGmailApi() {
 				console.log("for loop iteration " + i);
 				console.log(resp["threads"][i]["id"]);
 
+				var list = []
 				getThreads("me", resp["threads"][i]["id"], function(response){
 					console.log("response:");
+					console.log(response);
+					lis.push(response);
 					var temp = response.messages[0].payload.headers;
 					$.each(temp, function (j, dataItem) {
 						if (dataItem.name == "From") {
