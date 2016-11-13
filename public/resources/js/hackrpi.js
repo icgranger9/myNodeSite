@@ -73,7 +73,7 @@ function loadGmailApi() {
 
 
 function listMessages(userId, query, callback) {
-
+	console.log("In List messages");
   	var getPageOfMessages = function(request, result) {
 		request.execute(function(resp) {
 			result = result.concat(resp.messages);
