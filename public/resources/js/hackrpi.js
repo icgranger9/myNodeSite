@@ -60,24 +60,11 @@ function loadGmailApi() {
 				console.log(resp["threads"][i]["id"]);
 
 				getThreads("me", resp["threads"][i]["id"], function(response){
-					console.log("response:");
-					console.log(response);
-					console.log(response.messages[0].payload.headers);
-
+					console.log("DATA:");
+					console.log(response.messages[0].payload.parts[0].body.data);
+					//12 = subject
 				});
 			}
-
-				/*
-				getThreads("me", "THREAD_ID", function (dataMessage) {
-					var temp = dataMessage.messages[0].payload.headers;
-					console.log("dataItem.value");
-					$.each(temp, function (j, dataItem) {
-						if (dataItem.name == "From") {
-							console.log(dataItem.value);
-						}
-					}); 
-				console.log("End of for loop");
-				});*/
 		});
 	});
 }
