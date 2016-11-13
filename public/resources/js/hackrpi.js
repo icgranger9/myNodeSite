@@ -56,8 +56,7 @@ function loadGmailApi() {
 		console.log("Started");
 				
 		listMessages('me', '', function (userId, resp, callback) {
-			var obj = jQuery.parseJSON( resp);
-			var messageList = obj.messages;
+			var messageList = resp.messages;
 			for(var i = 0; i < messageList.length; i++) {
 				console.log("	In getMessages: id=" + messageList[i].id);
 				var request = gapi.client.gmail.users.messageList.get({
