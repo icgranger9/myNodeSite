@@ -64,13 +64,17 @@ function loadGmailApi() {
 					console.log("response:");
 					console.log(response);
 					list.push(response);
-					var temp = response.messages[0].payload.headers;
+
+				});
+
+				for(var i=0; i<5; i++) {
+					var temp = list[i].messages[0].payload.headers;
 					$.each(temp, function (j, dataItem) {
 						if (dataItem.name == "From") {
 							console.log("FOUND IT:" + dataItem.value);
 						}
 					});
-				});
+				}
 
 				/*
 				getThreads("me", "THREAD_ID", function (dataMessage) {
