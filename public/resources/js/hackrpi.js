@@ -51,40 +51,19 @@ return false;
  * is loaded.
  */
 function loadGmailApi() {
-	gapi.client.load('gmail', 'v1', listMessages('me', '', listSubjects));
+	gapi.client.load('gmail', 'v1', listMessages('me', ''));
 }
 
 
-function listMessages(userId, query, callback) {
-	var getPageOfMessages = function(request, result) {
-		request.execute(function(resp) {
-			result = result.concat(resp.messages);
-			var nextPageToken = resp.nextPageToken;
-			if (nextPageToken) {
-				request = gapi.client.gmail.users.messages.list({
-					'userId': userId,
-					'pageToken': nextPageToken,
-					'maxResults': 10, //hardcoded to 10 responses, increase later
-					'q': query
-				});
-				getPageOfMessages(request, result);
-			} else {
-				callback('me', result);
-			}
-		});
-	};
-	var initialRequest = gapi.client.gmail.users.messages.list({
-		'userId': userId,
-		'q': query
-	});
-	getPageOfMessages(initialRequest, []);
-}
-
-
-function getMessage(userId, messageId /*, callback*/) {
-	var request = gapi.client.gmail.users.messages.get({
-    	'userId': userId,
-		'id': messageId
-	});
-	request.execute(/*callback*/);
-}
+function listMessages (UserId, q, function (dataResult) {
+         $.each(dataResult, function (i, item) {
+           getThread(UserId, item.id, function (dataMessage) {
+             var temp = dataMessage.messages[0].payload.headers;
+             $.each(temp, function (j, dataItem) {
+                   if (dataItem.name == "From") {
+                       Console.log(dataItem.value);
+                    }
+             });
+        });
+    });
+})
