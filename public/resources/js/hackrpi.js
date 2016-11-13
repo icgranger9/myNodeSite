@@ -52,9 +52,9 @@ return false;
  */
 function loadGmailApi() {
 	gapi.client.load('gmail', 'v1', function() {
-		listThreads(USER, function(resp) {
+		listThreads("me", function(resp) {
 			for(var i = 0; i<5; i++){
-				getThreads(USER, resp["threads"][i]["id"], function(response){
+				getThreads("me", resp["threads"][i]["id"], function(response){
 					console.log(response);
 				});
 				getThreads("me", "THREAD_ID", function (dataMessage) {
