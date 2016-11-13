@@ -97,7 +97,7 @@ function listMessages(userId, query, callback) {
         request = gapi.client.gmail.users.messages.list({
           'userId': userId,
           'pageToken': nextPageToken,
-          'q': query
+          'q': query,
           'labelIds': 'INBOX'
         });
         getPageOfMessages(request, result);
