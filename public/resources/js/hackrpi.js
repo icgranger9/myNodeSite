@@ -58,8 +58,6 @@ function loadGmailApi() {
 		listMessages('me', '', function (userId, resp, callback) {
 			
 			console.log(String(resp));
-			//var messageList = resp.messages;
-
 
 			for(var i = 0; i < resp.length; i++) {
 				console.log("	In getMessages: id=" + resp[i].id);
@@ -69,7 +67,7 @@ function loadGmailApi() {
 				});
 
 				request.execute(function(request){
-					console.log("GOT MESSAGE?");
+					console.log(request);
 
 				});
 			}
