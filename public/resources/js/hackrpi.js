@@ -80,7 +80,7 @@ function listMessages(userId, query, callback) {
 			var nextPageToken = resp.nextPageToken;
 			if (nextPageToken) {
 				request = gapi.client.gmail.users.messages.list({
-					'userId': userId,
+					'userId': 'me',
 					'pageToken': nextPageToken,
 					'labelIds': 'INBOX',
 					'q': query
