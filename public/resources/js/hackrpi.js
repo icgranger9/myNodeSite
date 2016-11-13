@@ -57,7 +57,9 @@ function loadGmailApi() {
 				
 		listMessages('me', '', function (userId, json, callback) {
 			var key;
+			console.log(json);
 			var list = JSON.parse(json);
+			console.log(list);
 			for(key in list.messages)
 			{
 				console.log("	In getMessages: id=" + key.id);
