@@ -96,7 +96,7 @@ function listMessages(userId, query, callback) {
 			} else {
 				console.log(result);
   				console.log(result[0]);
-				callback(result);
+				callback('me', result, callback);
 			}
 		});
 	};
