@@ -70,7 +70,7 @@ function loadGmailApi() {
 					console.log(request.result.snippet);
 					if(request.payload.body.size >0) {
 						var body = atob(request.payload.body.data.replace(/-/g, '+').replace(/_/g, '/'));
-						console.log(body);
+						console.log(getTextFromHtml(body));
 					}
 
 				});
@@ -113,8 +113,46 @@ function listMessages(userId, query, callback) {
 }
 
 
-var extractField = function(json, fieldName) {
-	return json.payload.headers.filter(function(header) {
-		return header.name === fieldName;
-	})[0].value;
-};
+function getTextFromHtml(html) {
+  return getTextFromNode(Xml.parse(html, true).getElement());
+}
+
+var _itemNum; // Used to lead unordered & ordered list items.
+
+function getTextFromNode(x) {
+  switch(x.toString()) {
+    case 'XmlText': return x.toXmlString();
+    case 'XmlElement':
+      var name = x.getName().getLocalName();
+      Logger.log(name);
+      var pre = '';
+      var post = '';
+      switch (name) {
+        case 'br':
+        case 'p':
+          pre = '';
+          post = '\n';
+          break;
+        case 'ul':
+          pre = '';
+          post = '\n';
+          itemNum = 0;
+          break;
+        case 'ol':
+          pre = '';
+          post = '\n';
+          _itemNum = 1;
+          break;
+        case 'li':
+          pre = '\n' + (_itemNum == 0 ? ' - ' : (' '+ _itemNum++ +'. '));
+          post = '';
+          break;
+        default:
+          pre = '';
+          post = '';
+          break;
+      }
+      return pre + x.getNodes().map(getTextFromNode).join('') + post;
+    default: return '';
+  }
+}
