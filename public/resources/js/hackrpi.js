@@ -53,12 +53,14 @@ return false;
 function loadGmailApi() {
 	console.log("Test");
 	gapi.client.load('gmail', 'v1', function() {
+		console.log("Started");
 		listThreads("me", function(resp) {
 			for(var i = 0; i<5; i++){
+				console.log("for loop iteration " + i);
 				getThreads("me", resp["threads"][i]["id"], function(response){
 					console.log(response);
 				});
-				
+
 				getThreads("me", "THREAD_ID", function (dataMessage) {
 					var temp = dataMessage.messages[0].payload.headers;
 					$.each(temp, function (j, dataItem) {
@@ -80,8 +82,10 @@ function listThreads(userId, callback) {
 }
 
 function getThreads(userId, id){
+	console.log("in getThreads");
 	var request = gapi.client.gmail.users.threads.get({
 		'userId':userId,
 		'id':id
+		console.log("	ID= " + id);
 	});
 }
