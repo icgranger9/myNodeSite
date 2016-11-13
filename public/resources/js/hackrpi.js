@@ -55,7 +55,7 @@ function loadGmailApi() {
 	gapi.client.load('gmail', 'v1', function() {
 		console.log("Started");
 		listThreads("me", function(resp) {
-			for(var i = 0; i<5; i++){
+			for(var i = 0; i<10; i++){
 				console.log("for loop iteration " + i);
 				console.log(resp["threads"][i]["id"]);
 
