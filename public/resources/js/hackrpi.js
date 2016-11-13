@@ -51,6 +51,7 @@ return false;
  * is loaded.
  */
 function loadGmailApi() {
+	console.log("Test");
 	gapi.client.load('gmail', 'v1', function() {
 		listThreads("me", function(resp) {
 			for(var i = 0; i<5; i++){
