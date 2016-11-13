@@ -63,7 +63,7 @@ function loadGmailApi() {
 
 			for(var i = 0; i < resp.length; i++) {
 				console.log("	In getMessages: id=" + resp[i].id);
-				var request = gapi.client.gmail.users.resp.get({
+				var request = gapi.client.gmail.users.messages.get({
 					'userId':'me',
 					'id': resp[i].id
 				});
