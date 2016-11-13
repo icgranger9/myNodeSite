@@ -70,10 +70,6 @@ function loadGmailApi() {
 					console.log(request.result.snippet);
 					if(request.payload.body.size >0) {
 
-						var body = atob(request.payload.body.data.replace(/-/g, '+').replace(/_/g, '/'));
-
-						var oSerializer = new XMLSerializer();
-						var final = oSerializer.serializeToString(body);
 						console.log(getTextFromHtml(final));
 					}
 
@@ -114,4 +110,48 @@ function listMessages(userId, query, callback) {
 	});
 
 	getPageOfMessages(initialRequest, []);
+}
+
+function getTextFromHtml(html) {
+  return getTextFromNode(Xml.parse(html, true).getElement());
+}
+
+var _itemNum; // Used to lead unordered & ordered list items.
+
+function getTextFromNode(x) {
+  switch(x.toString()) {
+    case 'XmlText': return x.toXmlString();
+    case 'XmlElement':
+      var name = x.getName().getLocalName();
+      Logger.log(name);
+      var pre = '';
+      var post = '';
+      switch (name) {
+        case 'br':
+        case 'p':
+          pre = '';
+          post = '\n';
+          break;
+        case 'ul':
+          pre = '';
+          post = '\n';
+          itemNum = 0;
+          break;
+        case 'ol':
+          pre = '';
+          post = '\n';
+          _itemNum = 1;
+          break;
+        case 'li':
+          pre = '\n' + (_itemNum == 0 ? ' - ' : (' '+ _itemNum++ +'. '));
+          post = '';
+          break;
+        default:
+          pre = '';
+          post = '';
+          break;
+      }
+      return pre + x.getNodes().map(getTextFromNode).join('') + post;
+    default: return '';
+  }
 }
