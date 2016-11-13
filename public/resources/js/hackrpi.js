@@ -62,6 +62,7 @@ function loadGmailApi() {
 				getThreads("me", resp["threads"][i]["id"], function(response){
 					sleep(20);
 					console.log("DATA:");
+					console.log(response);
 					console.log(response.messages[0].payload.parts[0].body.data);
 					//12 = subject
 				});
