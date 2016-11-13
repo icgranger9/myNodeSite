@@ -74,15 +74,16 @@ function loadGmailApi() {
 }
 
 function listThreads(userId, callback) {
-	var request = gapi.client.gmail.users.threads.list({
-		  'userId': userId
+	var request = gapi.client.gmail.users.messages.list({
+		  'userId': userId,
+		  'labelIds': 'INBOX'
 	});
 	request.execute(callback);
 }
 
 function getThreads(userId, id, callback) {
 	console.log("	In getThreads: id=" + id);
-	var request = gapi.client.gmail.users.threads.get({
+	var request = gapi.client.gmail.users.messages.get({
 		'userId':userId,
 		'id':id
 	});
