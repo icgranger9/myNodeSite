@@ -58,6 +58,7 @@ function loadGmailApi() {
 				getThreads("me", resp["threads"][i]["id"], function(response){
 					console.log(response);
 				});
+				
 				getThreads("me", "THREAD_ID", function (dataMessage) {
 					var temp = dataMessage.messages[0].payload.headers;
 					$.each(temp, function (j, dataItem) {
