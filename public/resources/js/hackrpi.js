@@ -92,6 +92,8 @@ function getThreads(userId, id, callback) {
 	var request = gapi.client.gmail.users.threads.get({
 		'userId':userId,
 		'id':id
-	});
+	}); 
+	console.log("REQUEST");
+	console.log(request);
 	console.log("	End getThreads")
 }
