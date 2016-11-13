@@ -91,4 +91,5 @@ function getThreads(userId, id){
 		'userId':userId,
 		'id':id
 	});
+	console.log("	End getThreads")
 }
