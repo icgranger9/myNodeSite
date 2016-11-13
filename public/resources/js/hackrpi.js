@@ -86,6 +86,5 @@ function getThreads(userId, id){
 	var request = gapi.client.gmail.users.threads.get({
 		'userId':userId,
 		'id':id
-		console.log("	ID= " + id);
 	});
 }
