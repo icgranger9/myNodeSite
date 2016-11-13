@@ -61,6 +61,7 @@ function loadGmailApi() {
 					console.log(response);
 				});
 				console.log("Middle of for loop");
+				/*
 				getThreads("me", "THREAD_ID", function (dataMessage) {
 					var temp = dataMessage.messages[0].payload.headers;
 					$.each(temp, function (j, dataItem) {
@@ -70,6 +71,7 @@ function loadGmailApi() {
 					});
 				console.log("End of for loop");
 				});
+				*/
 			}
 		});
 	});
