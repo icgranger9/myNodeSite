@@ -56,7 +56,11 @@ function loadGmailApi() {
 		console.log("Started");
 				
 		listMessages('me', '', function (userId, resp, callback) {
+			
+			console.log(String(resp));
 			var messageList = resp.messages;
+
+
 			for(var i = 0; i < messageList.length; i++) {
 				console.log("	In getMessages: id=" + messageList[i].id);
 				var request = gapi.client.gmail.users.messageList.get({
@@ -103,3 +107,10 @@ function listMessages(userId, query, callback) {
 
 	getPageOfMessages(initialRequest, []);
 }
+
+
+var extractField = function(json, fieldName) {
+	return json.payload.headers.filter(function(header) {
+		return header.name === fieldName;
+	})[0].value;
+};
