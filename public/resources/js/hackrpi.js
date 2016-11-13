@@ -60,10 +60,9 @@ function loadGmailApi() {
 				console.log(resp["threads"][i]["id"]);
 
 				getThreads("me", resp["threads"][i]["id"], function(response){
+					console.log("response:");
 					console.log(response);
-					console.log("response");
 				});
-				console.log("Middle of for loop:" );
 
 				/*
 				getThreads("me", "THREAD_ID", function (dataMessage) {
@@ -96,6 +95,4 @@ function getThreads(userId, id, callback) {
 	});
 
 	request.execute(callback);
-	console.log("REQUEST");
-	console.log(request);
 }
