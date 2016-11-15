@@ -1,0 +1,18 @@
+{
+  "firstName": "Ian",
+  "lastName":"Granger",
+  "education":{
+    "school":"Fordham University",
+    "major":"Computer Science",
+    "class":"2018"
+  },
+  "experience":{
+    "president":"Computer Science Society",
+    "intern":["Cubus Solutions", "Ultra Clean Technology"]
+  },
+  "age": 21,
+  "email": "icgranger9@gmail.com",
+  "website":"http://iang.gg",
+  "resume":"http://iang.gg/resume",
+  "github":"https://github.com/icgranger9"
+}

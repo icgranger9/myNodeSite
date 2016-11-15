@@ -16,6 +16,9 @@ app.get('/resume', function(req, res, next) {
 	res.sendFile(path.join(__dirname, 'public/resources','Granger_Resume.pdf'));
 });
 
+app.get('/api', function(req, res, next) {
+	res.sendFile(path.join(__dirname, 'public/resources','ian.json'));
+});
 app.listen(8080, function () {
 	console.log('server listening on 8080');
 });
