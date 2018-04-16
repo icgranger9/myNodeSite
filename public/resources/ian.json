@@ -7,12 +7,13 @@
     "class":"2018"
   },
   "experience":{
-    "president":"Computer Science Society",
+    "Computer Science Society": "president",
     "intern":["Cubus Solutions", "Ultra Clean Technology"]
   },
-  "age": 21,
+  "age": 22,
   "email": "icgranger9@gmail.com",
   "website":"http://iang.gg",
   "resume":"http://iang.gg/resume",
-  "github":"https://github.com/icgranger9"
+  "github":"https://github.com/icgranger9",
+  "linkedin" : "https://www.linkedin.com/in/icgranger/"
 }
