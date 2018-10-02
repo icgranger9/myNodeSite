@@ -13,7 +13,7 @@ app.get('/test', function(req, res, next) {
 });
 
 app.get('/resume', function(req, res, next) {
-	res.sendFile(path.join(__dirname, 'public/resources','Granger_Resume_11.19.17.pdf'));
+	res.sendFile(path.join(__dirname, 'public/resources','Granger_Resume.pdf'));
 });
 
 app.get('/api', function(req, res, next) {
