@@ -1,4 +1,5 @@
 var express = require('express');
+var request = require('request');
 var app = express();
 var path = require('path');
 
@@ -19,6 +20,12 @@ app.get('/resume', function(req, res, next) {
 app.get('/api', function(req, res, next) {
 	res.sendFile(path.join(__dirname, 'public/resources','ian.json'));
 });
+
+app.all('/playlistSync', function(req, res, next) {
+	
+});
+
+
 app.listen(8080, function () {
 	console.log('server listening on 8080');
 });
