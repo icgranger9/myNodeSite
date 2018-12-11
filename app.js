@@ -24,7 +24,7 @@ app.get('/api', function(req, res, next) {
 app.all('/playlistSync', function(req, res, next) {
 	
 	//supposedly pipes everythin to the localhost. We'll see
-	req.pipe(request('http://locahost:9090'+req.originalUrl)).pipe(resp)
+	req.pipe(request('http://localhost:9090'+req.originalUrl)).pipe(resp)
 	
 });
 
