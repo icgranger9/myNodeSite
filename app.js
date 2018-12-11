@@ -23,6 +23,7 @@ app.get('/api', function(req, res, next) {
 
 app.all('/playlistSync', function(req, res, next) {
 	
+	console.log('URL: http://localhost:9090'+req.originalUrl);
 	request
 	.get('http://localhost:9090'+req.originalUrl)
 	.on('error', function(err) {
