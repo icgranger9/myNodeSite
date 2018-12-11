@@ -23,9 +23,21 @@ app.get('/api', function(req, res, next) {
 
 app.all('/playlistSync', function(req, res, next) {
 	
+	request
+	.get('http://google.com/img.png')
+	.on('error', function(err) {
+		console.log(err)
+	})
+	.on('response', function(response) {
+		console.log(response.statusCode) // 200
+		console.log(response.headers['content-type']) // 'image/png'
+	})
+	.pipe(res)
+
 	//supposedly pipes everythin to the localhost. We'll see
-	req.pipe(request('http://localhost:9090'+req.originalUrl)).pipe(resp)
-	
+	// const x = request('http://localhost:9090'+req.originalUrl)
+ //    req.pipe(x);
+ //    x.pipe(resp)	
 });
 
 
